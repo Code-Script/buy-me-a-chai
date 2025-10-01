@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="text-white flex flex-col items-center justify-center h-[44vh] gap-4 px-5 md:px-0 text-sm md:text-base">
-        <div className="md:text-5xl font-bold flex justify-center items-center gap-3 text-3xl">Buy Me A Chai<span><img src="/tea2.gif" width={60} alt="" /></span></div>
+        <div className="md:text-5xl font-bold flex justify-center items-center gap-3 text-3xl">Buy Me A Chai<span><Image src="/tea2.gif" width={60} height={30} alt="" /></span></div>
         <p className="text-center md:text-left">
           A crowdfunding platform for creators to fund their projects and ideas.
         </p>
@@ -29,19 +29,19 @@ export default function Home() {
         <h2 className="font-black text-3xl text-center my-8">Your Followers can buy you a Chai</h2>
         <div className="flex gap-5 justify-around">
           <div className="item space-y-3 flex flex-col items-center justify-center">
-            <img className="rounded-full p-2 h-24 w-24" src="/coder3.gif" alt="" />
+            <Image className="rounded-full p-2 h-24 w-24" src="/coder3.gif" width={24} height={24} alt="" />
             <p className="font-bold text-center">Fund Yourself</p>
             <p className="text-center">Lorem ipsum dolor sit amet.</p>
           </div>
 
           <div className="item space-y-3 flex flex-col items-center justify-center">
-            <img className="rounded-full p-2" src="/coin.gif" width={100} alt="" />
+            <Image className="rounded-full p-2" src="/coin.gif" width={100} height={100} alt="" />
             <p className="font-bold text-center">Fund Yourself</p>
             <p className="text-center">Lorem ipsum dolor sit amet.</p>
           </div>
 
           <div className="item space-y-3 flex flex-col items-center justify-center">
-            <img className="rounded-full p-2" src="/group.gif" width={100} alt="" />
+            <Image className="rounded-full p-2" src="/group.gif" width={100} height={100} alt="" />
             <p className="font-bold text-center">Fund Yourself</p>
             <p className="text-center">Lorem ipsum dolor sit amet.</p>
           </div>

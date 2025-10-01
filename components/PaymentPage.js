@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
+import { formatDynamicAPIAccesses } from "next/dist/server/app-render/dynamic-rendering";
+import Image from "next/image";
 
 const PaymentPage = ({ username }) => {
     // const { data: session } = useSession()
@@ -106,16 +108,16 @@ const PaymentPage = ({ username }) => {
 
 
             <div className='cover w-full relative'>
-                <img className='object-cover w-full h-[150px] md:h-[380px]' src={currentUser.coverpic} alt="" />
+                <Image className='object-cover w-full h-[150px] md:h-[380px]' src={currentUser.coverpic || "/default-cover.jpg"} width={1920} height={150} alt="" />
 
                 <div className='absolute -bottom-15 right-[35%] md:right-[46%]'>
-                    <img className='rounded-lg border' width={110} height={110} src={currentUser.profilepic} alt="" />
+                    <Image className='rounded-lg border' width={110} height={110} src={currentUser.profilepic|| "/default-profile.jpg"} alt="" />
                 </div>
             </div>
 
             <div className='info flex flex-col items-center justify-center gap-2 my-20'>
                 <div className='font-bold text-4xl'>
-                    {username}
+                    {currentUser.name}
                 </div>
                 <div>
                     Creating NOX
@@ -133,11 +135,11 @@ const PaymentPage = ({ username }) => {
                             {payments.map((p, i) => {
                                 return (
                                     <li key={i} className='my-3 flex items-center gap-2'>
-                                        <img className='rounded-full' width={28} src="avatar2.gif" alt="" />
-                                        <span>{p.name} donated <span className='font-bold'>₹{p.amount}</span> with a message "{p.message}"</span>
+                                        <Image className='rounded-full' width={28} height={28} src="/avatar2.gif" alt="" />
+                                        <span>{p.name} donated <span className='font-bold'>₹{p.amount}</span> with a message &quot;{p.message}&quot;</span>
                                     </li>
                                     // <li key={i} className='my-3 flex items-center gap-2'>
-                                    //     <img className='rounded-full' width={28} src="avatar2.gif" alt="" />
+                                    //     <Image className='rounded-full' width={28} src="avatar2.gif" alt="" />
                                     //     <span>user donated <span className='font-bold'>₹34</span> with a message "support from me"</span>
                                     // </li>
                                 )

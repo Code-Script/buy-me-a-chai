@@ -33,13 +33,13 @@ const Dashboard = () => {
         let a = await updateProfile(e, session.user.name)
         toast('Profile Updated', {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: false,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: "dark",
             transition: Bounce,
         });
 
