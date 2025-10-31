@@ -70,20 +70,20 @@ Create a `.env.local` in the project root and add the required environment varia
 
 ```env
 # MongoDB
-MONGODB_URI=[your_mongo_connection_string]
+MONGODB_URI=mongo_connection_string
 
 # NextAuth
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=[your_nextauth_secret]
+NEXTAUTH_SECRET=nextauth_secret
 
 # Razorpay
-RAZORPAY_KEY_ID=[YOUR_RAZORPAY_KEY_ID]
-RAZORPAY_KEY_SECRET=[YOUR_RAZORPAY_KEY_SECRET]
+RAZORPAY_KEY_ID=RAZORPAY_ID
+RAZORPAY_KEY_SECRET=KEY_SECRET
 
 # Any other provider keys
 ```
 
-Replace placeholders with your real credentials.
+
 
 ## Usage
 
@@ -138,13 +138,8 @@ This structure intentionally follows Next.js conventions for the App Router.
 
 ## Screenshots / Demo
 
-Add real screenshots to `public/` and reference them here. Example markdown:
-
-![Homepage placeholder][image-home]
-
 [image-home]: public/demo-placeholder.png "Homepage"
 
-Or link to a short demo GIF or video.
 
 ## Contributing
 
@@ -176,13 +171,4 @@ MIT License — see `LICENSE` (or add one) for full terms.
 - Author: Code-Script
 - Repo: https://github.com/Code-Script/buy-me-a-chai
 - For questions or help, open an issue or contact via GitHub profile.
-
----
-
-If you'd like, I can also:
-
-- Add a `LICENSE` file (MIT) and example `.env.local.example` file
-- Add small screenshots captured from a running dev server
-
-Feel free to ask me to make those additions — I can add them directly.
 
