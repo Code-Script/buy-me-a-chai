@@ -47,7 +47,15 @@ A modern Next.js application that lets creators receive support through virtual 
   - Environment Configuration
   - PostCSS Optimization
 
-## 📦 Installation
+## � Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+- MongoDB database
+- Razorpay account
+
+### Installation
 
 1. Clone the repository:
 ```bash
@@ -61,103 +69,141 @@ npm install
 ```
 
 3. Set up environment variables:
-Create a `.env.local` file in the root directory with:
 ```env
-# MongoDB
-MONGODB_URI=[your_mongo_connection_string]
-
-# NextAuth Configuration
+# Required Environment Variables
+MONGODB_URI=your_mongodb_uri
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=[your_nextauth_secret]
-
-# Razorpay
-RAZORPAY_KEY_ID=[YOUR_RAZORPAY_KEY_ID]
-RAZORPAY_KEY_SECRET=[YOUR_RAZORPAY_KEY_SECRET]
-
-# Any other provider keys
+NEXTAUTH_SECRET=your_nextauth_secret
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_secret_key
 ```
 
-Replace placeholders with your real credentials.
+### Development
 
-## Usage
-
-Run the development server:
-
-```powershell
+```bash
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open http://localhost:3000 in your browser.
+### Quick Start Guide
 
-Typical flow:
+1. Configure environment variables
+2. Start the development server
+3. Visit http://localhost:3000
+4. Sign in and complete your profile
+5. Share your unique chai link!
 
-1. Sign in (via the configured provider / NextAuth).
-2. Navigate to `/dashboard` to see incoming payments and generate a payment link.
-3. Use the payment flow which talks to the backend `/api/razorpay` route.
+## 📚 API Reference
 
-## API Endpoints
+### Payment Endpoints
 
-The project includes a few API routes under `app/api` (Next.js route handlers). Key endpoints:
+#### Create Payment Order
+```http
+POST /api/razorpay
+```
+Creates a new payment order in Razorpay
 
-- `POST /api/razorpay` — create a new Razorpay order
-	- Request: JSON with amount and metadata
-	- Response: Razorpay order object (id, amount, etc.)
+**Request Body**
+```json
+{
+  "amount": "number",
+  "currency": "string",
+  "receipt": "string"
+}
+```
 
-- `POST /api/auth/[...nextauth]/route` — NextAuth route handler
-	- Handles authentication callbacks, sessions, and providers
+**Response**
+```json
+{
+  "id": "string",
+  "amount": "number",
+  "currency": "string",
+  "receipt": "string",
+  "status": "string"
+}
+```
 
-Notes:
-- Exact request/response shapes are implemented in the route handlers under `app/api/*`. Inspect `app/api/razorpay/route.js` and `app/api/auth/[...nextauth]/route.js` for details.
-- Add CSRF/webhook verification for production webhooks.
+### Authentication Endpoints
 
-## Project Structure
+All authentication is handled through NextAuth.js at:
+```http
+POST /api/auth/[...nextauth]
+```
 
-Top-level layout (key files/folders):
+Supports:
+- Session management
+- OAuth providers
+- JWT handling
 
-- `app/` — Next.js App Router pages & API route handlers
-	- `layout.js`, `page.js` — entry points
-	- `[username]/page.js` — user profile / public page
-	- `api/` — route handlers (`auth`, `razorpay`, ...)
-- `components/` — React components used across pages
-	- `Navbar.js`, `Footer.js`, `Dashboard.js`, `PaymentPage.js`, `SessionWrapper.js`
-- `db/` — database connection helpers
-	- `connectDb.js` — connects to MongoDB
-- `models/` — Mongoose models
-	- `User.js`, `Payment.js`
-- `public/` — static assets (images, icons)
-- `postcss.config.mjs`, `next.config.mjs`, `jsconfig.json` — build & tooling config
+## 📁 Project Structure
 
-This structure intentionally follows Next.js conventions for the App Router.
+```
+buy-me-a-chai/
+├── app/                 # Next.js 14 App Router
+│   ├── page.js         # Homepage
+│   ├── layout.js       # Root layout
+│   ├── [username]/     # User profiles
+│   ├── dashboard/      # User dashboard
+│   └── api/           # API routes
+├── components/         # React components
+├── db/                # Database setup
+├── models/            # Mongoose models
+└── public/            # Static files
+```
 
-## Screenshots / Demo
+Key Components:
+- `Dashboard.js`: Payment tracking interface
+- `PaymentPage.js`: Razorpay integration
+- `SessionWrapper.js`: Auth management
 
-Add real screenshots to `public/` and reference them here. Example markdown:
+## 🤝 Contributing
 
-![Homepage placeholder][image-home]
+We love your input! Here's how to contribute:
 
-[image-home]: public/demo-placeholder.png "Homepage"
+1. Fork the repo
+2. Create your branch: `git checkout -b feature/amazing`
+3. Make changes and test thoroughly
+4. Commit: `git commit -m 'Add amazing feature'`
+5. Push: `git push origin feature/amazing`
+6. Open a Pull Request
 
-Or link to a short demo GIF or video.
+### Development Guidelines
 
-## Contributing
+- Follow existing code style
+- Add tests for new features
+- Update documentation
+- Keep PRs focused and atomic
 
-Contributions are welcome! A simple contributor workflow:
+### Local Development
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Set up environment variables (see above)
+2. Start MongoDB locally or use Atlas
+3. Run development server
+4. Make your changes
+5. Test thoroughly
 
-## 📝 Environment Variables
+## 🛡️ Security Features
 
-Required environment variables:
+- **Payment Security**
+  - Razorpay's secure checkout
+  - Payment data encryption
+  - Webhook verification
 
-- `MONGODB_URI`: MongoDB connection string
-- `NEXTAUTH_URL`: Your app's URL
-- `NEXTAUTH_SECRET`: Random string for session security
-- `RAZORPAY_KEY_ID`: Razorpay API key
-- `RAZORPAY_KEY_SECRET`: Razorpay secret key
+- **User Security**
+  - NextAuth.js session management
+  - OAuth 2.0 authentication
+  - CSRF protection
+
+- **API Security**
+  - Rate limiting
+  - CORS configuration
+  - Input validation
 
 ## 🔒 Security
 
