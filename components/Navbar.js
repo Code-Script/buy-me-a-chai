@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className='bg-indigo-950 text-white flex justify-between items-center px-4 md:h-14 flex-col md:flex-row'>
       <Link href={"/"} className='logo font-bold flex items-center justify-center gap-1 pt-2 md:pt-0'>
-        <Image src="/tea2.gif" width={40} height={20} alt="" />
+        <Image src="/tea2.png" width={40} height={20} alt="" />
         <span className='text-xl md:text-base '>Buy Me a Chai!</span>
       </Link>
       {/* <ul className='flex justify-between gap-4'>
