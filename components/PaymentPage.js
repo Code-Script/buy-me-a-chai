@@ -108,10 +108,10 @@ const PaymentPage = ({ username }) => {
 
 
             <div className='cover w-full relative'>
-                <Image className='object-cover w-full h-[150px] md:h-[380px]' src={currentUser.coverpic || "/default-cover.jpg"} width={1920} height={150} alt="" />
+                <Image className='object-cover w-full h-[150px] md:h-[380px]' src={currentUser.coverpic || "/default-cover.png"} width={1920} height={150} alt="" />
 
                 <div className='absolute -bottom-15 right-[35%] md:right-[46%]'>
-                    <Image className='rounded-lg border' width={110} height={110} src={currentUser.profilepic|| "/default-profile.jpg"} alt="" />
+                    <Image className='rounded-lg border' width={110} height={110} src={currentUser.profilepic|| "/default-profile.png"} alt="" />
                 </div>
             </div>
 
@@ -120,7 +120,7 @@ const PaymentPage = ({ username }) => {
                     {currentUser.name}
                 </div>
                 <div>
-                    Creating NOX
+                    Developing innovative websites
                 </div>
                 <div className='text-gray-400'>
                     946 paid members • 152 posts
