@@ -7,6 +7,7 @@ const Login = () => {
   const { data: session } = useSession()
 
   const router = useRouter()
+  const providerButtonClass = "group flex w-full items-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-lg shadow-slate-950/20 transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-cyan-50 hover:shadow-cyan-950/30 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#0b1220]"
 
   useEffect(() => {
     document.title = "Login - Buy Me a Chai"
@@ -18,14 +19,19 @@ const Login = () => {
 
 
   return (
-    <div className='text-white py-12 container mx-auto'>
-      <h1 className='font-bold text-3xl text-center'>Login to Get Started</h1>
+    <div className='container mx-auto flex min-h-[calc(100vh-7rem)] items-center justify-center px-5 py-12 text-white'>
+      <section className="w-full max-w-md rounded-3xl border border-white/10 bg-slate-950/30 p-7 shadow-2xl shadow-slate-950/30 backdrop-blur-md md:p-10">
+      <div className="text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Welcome back</p>
+        <h1 className='mt-3 font-bold text-3xl md:text-4xl'>Login to get started</h1>
+        <p className="mt-3 text-sm leading-6 text-slate-300">Choose your preferred account to continue supporting the creators you love.</p>
+      </div>
 
-      <div className="flex flex-col gap-2 min-h-screen items-center  p-10">
+      <div className="mt-8 flex flex-col gap-3">
 
 
-        <button
-          className="flex items-center w-64 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+        <button onClick={() => { signIn("google") }}
+          className={providerButtonClass}>
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="-0.5 0 48 48" version="1.1">
 
@@ -53,7 +59,7 @@ const Login = () => {
 
 
         <button
-          className="flex items-center w-64 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          className={providerButtonClass}>
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 -2 44 44" version="1.1">
             <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -70,7 +76,7 @@ const Login = () => {
 
 
         <button
-          className="flex items-center w-64 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          className={providerButtonClass}>
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 -4 48 48" version="1.1">
             <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -89,7 +95,7 @@ const Login = () => {
 
 
         <button
-          className="flex items-center w-64 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          className={providerButtonClass}>
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 48 48" version="1.1">
             <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -108,7 +114,7 @@ const Login = () => {
 
 
         <button onClick={() => { signIn("github") }}
-          className="flex items-center w-64 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          className={providerButtonClass}>
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 73 73" version="1.1">
             <g id="team-collaboration/version-control/github" stroke="none" strokeWidth="1" fill="none"
@@ -132,7 +138,7 @@ const Login = () => {
 
 
         <button
-          className="flex items-center w-64 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          className={providerButtonClass}>
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="-1.5 0 20 20" version="1.1">
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -153,6 +159,7 @@ const Login = () => {
 
 
       </div>
+      </section>
 
     </div>
   )
