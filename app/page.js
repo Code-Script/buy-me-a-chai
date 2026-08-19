@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="text-white flex flex-col items-center justify-center h-[44vh] gap-4 px-5 md:px-0 text-sm md:text-base">
-        <div className="md:text-5xl font-bold flex justify-center items-center gap-3 text-3xl">Buy Me A Chai<span><Image src="/tea2.gif" width={60} height={30} alt="" /></span></div>
+        <div className="md:text-5xl font-bold flex justify-center items-center gap-3 text-3xl">Buy Me A Chai<span><Image src="/tea2.png" width={80} height={40} alt="" /></span></div>
         <p className="text-center md:text-left">
           A crowdfunding platform for creators to fund their projects and ideas.
         </p>
@@ -28,22 +28,22 @@ export default function Home() {
       <div className="text-white container mx-auto pb-24 pt-10 px-7">
         <h2 className="font-black text-3xl text-center my-8">Your Followers can buy you a Chai</h2>
         <div className="flex gap-5 justify-around">
-          <div className="item space-y-3 flex flex-col items-center justify-center">
+          <div className="item pl-7 pr-7 space-y-3 flex flex-col items-center justify-center">
             <Image className="rounded-full p-2 h-24 w-24" src="/coder3.gif" width={24} height={24} alt="" />
-            <p className="font-bold text-center">Fund Yourself</p>
-            <p className="text-center">Lorem ipsum dolor sit amet.</p>
+            <p className="text-lg font-bold text-center">Build what you love</p>
+            <p className="text-center">Turn your passion into progress with support from the people who enjoy your work.</p>
           </div>
 
-          <div className="item space-y-3 flex flex-col items-center justify-center">
+          <div className="item pl-7 pr-7 space-y-3 flex flex-col items-center justify-center">
             <Image className="rounded-full p-2" src="/coin.gif" width={100} height={100} alt="" />
-            <p className="font-bold text-center">Fund Yourself</p>
-            <p className="text-center">Lorem ipsum dolor sit amet.</p>
+            <p className="text-lg font-bold text-center">Receive a little boost</p>
+            <p className="text-center">Each chai is a simple way for followers to contribute to your next idea, project, or goal.</p>
           </div>
 
-          <div className="item space-y-3 flex flex-col items-center justify-center">
+          <div className="item pl-7 pr-7 space-y-3 flex flex-col items-center justify-center">
             <Image className="rounded-full p-2" src="/group.gif" width={100} height={100} alt="" />
-            <p className="font-bold text-center">Fund Yourself</p>
-            <p className="text-center">Lorem ipsum dolor sit amet.</p>
+            <p className="text-lg font-bold text-center">Grow with your community</p>
+            <p className="text-center">Share your page, connect with supporters, and celebrate the people cheering you on.</p>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function Home() {
       <div className="text-white container mx-auto pb-24 pt-10 flex flex-col items-center justify-center">
         <h2 className="font-black text-3xl text-center my-8">Learn more about us</h2>
         <div className="w-[90%] h-[40vh] md:w-[50%] md:h-[40vh] lg:w-[50%] lg:h-[40vh] xl-[50%] xl:h-[40vh] ">
-          <iframe className="w-full h-full" src="https://www.youtube.com/embed/QtaorVNAwbI?si=VspiZDsHzhM4jYQe" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+          <iframe className="w-full h-full " src="/intro_video.mp4" title="Video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
       </div>
     </>
