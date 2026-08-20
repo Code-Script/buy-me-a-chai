@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 const values = [
   { title: "Made for meaningful support", description: "Every chai is a small gesture that tells a creator their work matters—and gives them room to keep going." },
   { title: "Simple by design", description: "Set up your page, share it with your community, and let supporters send encouragement in just a few clicks." },
@@ -34,7 +35,7 @@ export default function About() {
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-200">
           Whether you are building your first project or creating for an audience of thousands, start a page and invite your community to buy you a chai.
         </p>
-        <Link href="/login" className="mt-7 inline-block rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]">
+        <Link href="/login" className="mt-7 inline-block rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:from-cyan-400 hover:to-blue-500 hover:scale-[1.02]">
           Start your page
         </Link>
       </section>

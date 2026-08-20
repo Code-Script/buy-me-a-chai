@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "encrypted-tbn0.gstatic.com",
+        hostname: "st4.depositphotos.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**", // Allows any external domain for user-uploaded cover/profile pics
       },
     ],
   },
