@@ -1,4 +1,3 @@
-// auth.js
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
@@ -6,6 +5,7 @@ import connectDb from "@/db/connectDb";
 import User from "@/models/User";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
   trustHost: true,
   providers: [
     GitHub({
@@ -20,7 +20,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     async signIn({ user, account }) {
       if (account?.provider === "github" || account?.provider === "google") {
-        if (!user.email) return false;
+        if (!user?.email) return false;
 
         await connectDb();
         const currentUser = await User.findOne({ email: user.email });
@@ -35,10 +35,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return true;
     },
     async session({ session }) {
-      await connectDb();
-      const dbUser = await User.findOne({ email: session.user.email });
-      if (dbUser) {
-        session.user.name = dbUser.username;
+      if (session?.user?.email) {
+        await connectDb();
+        const dbUser = await User.findOne({ email: session.user.email });
+        if (dbUser) {
+          session.user.name = dbUser.username;
+        }
       }
       return session;
     },
