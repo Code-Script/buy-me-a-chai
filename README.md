@@ -39,7 +39,7 @@ npm install
 Create a `.env.local` file in the project root:
 
 ```env
-MONGODB_URI=mongodb_connection_string
+MONGO_URI=mongodb_connection_string
 
 AUTH_SECRET=a_long_random_secret
 AUTH_URL=http://localhost:3000
