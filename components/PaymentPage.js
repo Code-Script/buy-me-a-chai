@@ -131,7 +131,7 @@ const PaymentPage = ({ username }) => {
                     <div className="supporters w-full rounded-2xl border border-white/10 bg-slate-950/40 p-6 shadow-xl shadow-slate-950/20 backdrop-blur-sm md:w-1/2 md:p-7">
                         {/* list of all supporters */}
                         <h2 className='mb-5 text-2xl font-bold'>Top Supporters</h2>
-                        <ul className='max-h-[244px] space-y-3 overflow-y-auto text-sm md:text-base'>
+                        <ul className='supporters-list max-h-[244px] space-y-3 overflow-y-auto scroll-smooth text-sm md:text-base'>
                             {payments.length === 0 && <li className='rounded-xl border border-dashed border-white/10 px-4 py-5 text-center text-slate-400'>No payments yet</li>}
                             {payments.map((p, i) => {
                                 return (

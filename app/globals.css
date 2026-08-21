@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+.supporters-list {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee rgba(15, 23, 42, 0.7);
+}
+
+.supporters-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.supporters-list::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.supporters-list::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(2, 6, 23, 0.6);
+  border-radius: 9999px;
+  background: linear-gradient(#67e8f9, #2563eb);
+}
+
+.supporters-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#a5f3fc, #3b82f6);
+}
+
 .Toastify__toast {
   position: relative;
   min-height: 64px;
